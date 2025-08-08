@@ -3,14 +3,14 @@ package entity;
 import jakarta.validation.constraints.*;
 
 public class Review {
-    @NotNull(message = "Tên không được để trống")
+    @NotBlank(message = "Tên không được để trống")
     private String username;
 
-    @NotNull(message = "Email không được để trống")
+    @NotBlank(message = "Email không được để trống")
     @Email(message = "Email không đúng định dạng")
     private String email;
 
-    @Min(value = 1, message = "Đánh giá ít nhất là 1 sao")
+    @Min(value = 1, message = "Đánh giá tối thiểu 1 sao")
     @Max(value = 5, message = "Đánh giá tối đa là 5 sao")
     private int rating;
 
